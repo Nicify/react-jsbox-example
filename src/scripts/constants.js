@@ -2,6 +2,8 @@ export const apiKey = 'awVphvq9cwPg9f1F1ij20tUaILmj0t3KP6DTWVDW'
 
 export const codeIcon = $image('assets/code.png')
 
+export const fullscreenIcon = $image('assets/fullscreen.png')
+
 export const UIViewAnimationOption = {
   LayoutSubviews: 1 << 0,
   AllowUserInteraction: 1 << 1,

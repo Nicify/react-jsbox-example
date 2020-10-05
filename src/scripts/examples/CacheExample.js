@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import { useCache } from 'react-jsbox'
-import { listTemplate } from '../constants'
 
 export default function CacheExample(props) {
   const { width } = props.frame
@@ -28,7 +27,6 @@ export default function CacheExample(props) {
         scrollEnabled={false}
         radius={5}
         data={['INCREASE', 'DECREASE', 'RESET']}
-        template={listTemplate}
         events={{
           didSelect: (sender, { row }) => setCount(count => count + [1, -1, -count][row])
         }}

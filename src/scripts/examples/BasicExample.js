@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { listTemplate } from '../constants'
 
 export default class BasicExample extends Component {
   state = {
@@ -25,7 +24,6 @@ export default class BasicExample extends Component {
           scrollEnabled={false}
           radius={10}
           data={['INCREASE', 'DECREASE', 'RESET']}
-          template={listTemplate}
           events={{
             didSelect: (sender, { row }) =>
               this.setState({

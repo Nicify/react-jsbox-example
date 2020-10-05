@@ -8,7 +8,11 @@ export default function JsxLiteralExample(props) {
   const styles = useMemo(
     () => ({
       text: $rect(width * 0.5 - 50, 64, 100, 30),
-      slider: $rect(20, width * 0.4, width - 40, 50)
+      sliders: {
+        red: $rect(20, width * 0.4, width - 40, 50),
+        green: $rect(20, width * 0.4 + 50, width - 40, 50),
+        blue: $rect(20, width * 0.4 + 100, width - 40, 50)
+      }
     }),
     [width]
   )
@@ -31,13 +35,10 @@ export default function JsxLiteralExample(props) {
       textColor=${color}
       bgcolor=${$color(invert(color.hexCode))}
   />
-  ${['red', 'green', 'blue'].map(
-    (key, idx) => jsx`<slider
-        key=${key}
-        frame=${{
-          ...styles.slider,
-          y: width * 0.4 + 50 * idx
-        }}
+  ${Object.keys(styles.sliders).map(
+    key => jsx`<slider
+    key=${key}
+    frame=${styles.sliders[key]}
     value=${components[key]}
     min=${0}
     max=${255}
